@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:w_jet/function/alert.dart';
 import 'package:w_jet/widget/widget_button.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
@@ -46,7 +47,20 @@ class Header extends StatelessWidget {
         const SizedBox(width: 10),
         Expanded(
           child: OutlineBtn(
-            onTap: () {},
+            onTap: () {
+              Alert.show(
+                  context: context,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 10),
+                    controller: ScrollController(),
+                    itemCount: 3,
+                    itemBuilder: (context, index) {
+                      return BorderBox();
+                    },
+                  ),
+                  title: 'Recipe');
+            },
             text: 'Recipe Name',
             height: 100,
             fontSize: 30,

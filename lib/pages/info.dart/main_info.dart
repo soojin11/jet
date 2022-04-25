@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:w_jet/function/alert.dart';
 import 'package:w_jet/pages/info.dart/log.dart';
 import 'package:w_jet/widget/head_reservoir.dart';
 import 'package:w_jet/widget/widget_button.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
+enum HcCommand { execute, restart, shutdown }
+
 class HeadReservoir extends StatelessWidget {
-  const HeadReservoir({Key? key}) : super(key: key);
+  HeadReservoir({Key? key}) : super(key: key);
   borderBox({required Widget child, required String title, int flex = 1}) {
     return Expanded(
-      child: BorderBox(
+      child: RoundBorderBox(
         child: child,
         title: title,
       ),
       flex: flex,
     );
   }
+
+  HcCommand? _command = HcCommand.execute;
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +40,15 @@ class HeadReservoir extends StatelessWidget {
                               horizontal: 10, vertical: 10),
                           // height: 100,
                           child: Row(
-                            children: const [
-                              HeadAndReservoirWidget(),
-                              HeadAndReservoirWidget(),
-                              HeadAndReservoirWidget(),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                  child:
+                                      HeadAndReservoirWidget(showText: true)),
+                              Expanded(child: HeadAndReservoirWidget()),
+                              Expanded(child: HeadAndReservoirWidget()),
+                              // HeadAndReservoirWidget(),
+                              // HeadAndReservoirWidget(),
                             ],
                           ),
                           decoration: BoxDecoration(
@@ -86,7 +96,51 @@ class HeadReservoir extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 10),
                                 OutlineBtn(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Alert.show(
+                                      context: context,
+                                      title: 'UV 365',
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              BorderBox(
+                                                child: const Text('Intensity'),
+                                              ),
+                                              BorderBox(
+                                                child: const Text('Set'),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              BorderBox(
+                                                child: const Text('255(SV)'),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  BorderBox(
+                                                      width: 70,
+                                                      child: const Text('On')),
+                                                  const SizedBox(width: 10),
+                                                  BorderBox(
+                                                    width: 70,
+                                                    child: const Text('Off'),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    );
+                                  },
                                   text: '255',
                                   height: 40,
                                   width: 60,
@@ -106,7 +160,51 @@ class HeadReservoir extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 10),
                                 OutlineBtn(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Alert.show(
+                                      context: context,
+                                      title: 'UV 395',
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              BorderBox(
+                                                child: const Text('Intensity'),
+                                              ),
+                                              BorderBox(
+                                                child: const Text('Set'),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              BorderBox(
+                                                child: const Text('255(SV)'),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  BorderBox(
+                                                      width: 70,
+                                                      child: const Text('On')),
+                                                  const SizedBox(width: 10),
+                                                  BorderBox(
+                                                    width: 70,
+                                                    child: const Text('Off'),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    );
+                                  },
                                   text: '255',
                                   height: 40,
                                   width: 60,
@@ -130,7 +228,25 @@ class HeadReservoir extends StatelessWidget {
                               fontSize: 15,
                             ),
                             OutlineBtn(
-                              onTap: () {},
+                              onTap: () {
+                                Alert.show(
+                                    context: context,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        BorderBox(
+                                          child: const Text('Vacuum'),
+                                          width: 180,
+                                        ),
+                                        BorderBox(
+                                            child: const Text('On'), width: 70),
+                                        BorderBox(
+                                            child: const Text('Off'), width: 70)
+                                      ],
+                                    ),
+                                    title: 'Vacuum');
+                              },
                               text: 'Vaccuum',
                               height: 40,
                               width: 250,
@@ -203,21 +319,144 @@ class HeadReservoir extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 OutlineBtn(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Alert.show(
+                                        context: context,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                BorderBox(
+                                                    child: const Text('밝기')),
+                                                BorderBox(
+                                                    child: const Text('조명')),
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                BorderBox(
+                                                    child:
+                                                        const Text('255(SV)')),
+                                                Row(
+                                                  children: [
+                                                    BorderBox(
+                                                        child: const Text('On'),
+                                                        width: 70),
+                                                    const SizedBox(width: 10),
+                                                    BorderBox(
+                                                        child:
+                                                            const Text('Off'),
+                                                        width: 70)
+                                                  ],
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                        title: 'View');
+                                  },
                                   text: '255',
                                   radius: BorderRadius.circular(10),
                                   height: 40,
                                   width: 80,
                                 ),
                                 OutlineBtn(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Alert.show(
+                                        context: context,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                BorderBox(
+                                                    child: const Text('밝기')),
+                                                BorderBox(
+                                                    child: const Text('조명')),
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                BorderBox(
+                                                    child:
+                                                        const Text('123(SV)')),
+                                                Row(
+                                                  children: [
+                                                    BorderBox(
+                                                        child: const Text('On'),
+                                                        width: 70),
+                                                    const SizedBox(width: 10),
+                                                    BorderBox(
+                                                        child:
+                                                            const Text('Off'),
+                                                        width: 70)
+                                                  ],
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                        title: 'Nozzle');
+                                  },
                                   text: '123',
                                   radius: BorderRadius.circular(10),
                                   height: 40,
                                   width: 80,
                                 ),
                                 OutlineBtn(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Alert.show(
+                                        context: context,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                BorderBox(
+                                                    child: const Text('밝기')),
+                                                BorderBox(
+                                                    child: const Text('조명')),
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                BorderBox(
+                                                    child:
+                                                        const Text('80(SV)')),
+                                                Row(
+                                                  children: [
+                                                    BorderBox(
+                                                        child: const Text('On'),
+                                                        width: 70),
+                                                    const SizedBox(width: 10),
+                                                    BorderBox(
+                                                        child:
+                                                            const Text('Off'),
+                                                        width: 70)
+                                                  ],
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                        title: 'Align');
+                                  },
                                   text: '80',
                                   radius: BorderRadius.circular(10),
                                   height: 40,
@@ -234,21 +473,121 @@ class HeadReservoir extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             OutlineBtn(
-                              onTap: () {},
+                              onTap: () {
+                                Alert.show(
+                                    context: context,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        BorderBox(
+                                          child: const Text('Power'),
+                                          width: 180,
+                                        ),
+                                        BorderBox(
+                                            child: const Text('On'), width: 70),
+                                        BorderBox(
+                                            child: const Text('Off'), width: 70)
+                                      ],
+                                    ),
+                                    title: 'PC Power');
+                              },
                               text: 'PC Power On',
                               radius: BorderRadius.circular(10),
                               height: 40,
                               width: 200,
                             ),
                             OutlineBtn(
-                              onTap: () {},
+                              onTap: () {
+                                Alert.show(
+                                    context: context,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        BorderBox(
+                                          child: const Text('Connection'),
+                                          width: 150,
+                                        ),
+                                        BorderBox(
+                                          child: const Text('Disconnection'),
+                                          width: 150,
+                                        ),
+                                      ],
+                                    ),
+                                    title: 'HC Interface');
+                              },
                               text: 'Connected',
                               radius: BorderRadius.circular(10),
                               height: 40,
                               width: 200,
                             ),
                             OutlineBtn(
-                              onTap: () {},
+                              onTap: () {
+                                Alert.show(
+                                    context: context,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            BorderBox(
+                                              child:
+                                                  const Text('Execute Server'),
+                                              width: 150,
+                                            ),
+                                            BorderBox(
+                                              child:
+                                                  const Text('Restart Server'),
+                                              width: 150,
+                                            ),
+                                            BorderBox(
+                                              child:
+                                                  const Text('Shutdown Server'),
+                                              width: 150,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            BorderBox(
+                                              child: Radio<HcCommand>(
+                                                  value: HcCommand.execute,
+                                                  groupValue: _command,
+                                                  onChanged: (HcCommand? v) {
+                                                    _command = v;
+                                                  }),
+                                              width: 150,
+                                            ),
+                                            BorderBox(
+                                              child: Radio<HcCommand>(
+                                                  value: HcCommand.restart,
+                                                  groupValue: _command,
+                                                  onChanged: (HcCommand? v) {
+                                                    _command = v;
+                                                  }),
+                                              width: 150,
+                                            ),
+                                            BorderBox(
+                                              child: Radio<HcCommand>(
+                                                  value: HcCommand.shutdown,
+                                                  groupValue: _command,
+                                                  onChanged: (HcCommand? v) {
+                                                    _command = v;
+                                                  }),
+                                              width: 150,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    title: 'HC Interface');
+                              },
                               text: 'Error',
                               radius: BorderRadius.circular(10),
                               height: 40,

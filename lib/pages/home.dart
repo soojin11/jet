@@ -23,7 +23,7 @@ class MainHome extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black)),
-                child: const HeadReservoir()),
+                child: HeadReservoir()),
             flex: 7,
           ),
           const Expanded(

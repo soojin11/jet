@@ -32,8 +32,8 @@ class ReusedContainer extends Container {
   final BorderRadiusGeometry? radius;
 }
 
-class BorderBox extends StatelessWidget {
-  const BorderBox({
+class RoundBorderBox extends StatelessWidget {
+  const RoundBorderBox({
     Key? key,
     this.title = '',
     required this.child,
@@ -58,9 +58,25 @@ class BorderBox extends StatelessWidget {
   }
 }
 
- // child: Container(
-      //   width: 100,
-      //   decoration: BoxDecoration(
-      //       border: Border.all(color: Colors.blueGrey),
-      //       borderRadius: BorderRadius.circular(10)),
-      // ),
+class BorderBox extends Container {
+  BorderBox(
+      // this.txt,
+      {
+    Key? key,
+    this.width = 150,
+    this.height = 40,
+    this.child,
+  }) : super(
+            key: key,
+            alignment: Alignment.center,
+            // child: Text(txt),
+            child: child,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+            ),
+            width: width,
+            height: height);
+  final Widget? child;
+  final double? width;
+  final double? height;
+}

@@ -9,6 +9,8 @@ class OutlineBtn extends Material {
       this.width,
       this.fontSize,
       this.bgColor = Colors.blue,
+      this.txtColor = Colors.white,
+      this.borderColor = Colors.blueGrey,
       this.radius})
       : super(
           key: key,
@@ -22,11 +24,11 @@ class OutlineBtn extends Material {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: bgColor,
-                  border: Border.all(color: Colors.blueGrey),
+                  border: Border.all(color: borderColor),
                   borderRadius: radius),
               child: Text(
                 text,
-                style: TextStyle(color: Colors.white, fontSize: fontSize),
+                style: TextStyle(color: txtColor, fontSize: fontSize),
               ),
             ),
             onTap: onTap,
@@ -38,4 +40,6 @@ class OutlineBtn extends Material {
   final double? fontSize;
   final BorderRadiusGeometry? radius;
   final Color bgColor;
+  final Color txtColor;
+  final Color borderColor;
 }
