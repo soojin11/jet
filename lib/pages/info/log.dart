@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:w_jet/controller/log_ctrl.dart';
 import '../../widget/widget_button.dart';
 
 class LogScreen extends StatelessWidget {
-  const LogScreen({Key? key}) : super(key: key);
+  LogScreen({Key? key}) : super(key: key);
+  RxInt idx = RxInt(0);
 
   btn({required VoidCallback? onTap, String text = ''}) {
     return Expanded(
@@ -32,24 +35,30 @@ class LogScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  btn(onTap: () {}, text: 'All'),
-                  btn(onTap: () {}, text: 'System'),
-                  btn(onTap: () {}, text: 'Result'),
-                  btn(onTap: () {}, text: 'Alarm'),
+                  btn(
+                      onTap: () {
+                        idx.value = 0;
+                      },
+                      text: 'All'),
+                  btn(
+                      onTap: () {
+                        idx.value = 1;
+                      },
+                      text: 'System'),
+                  btn(
+                      onTap: () {
+                        idx.value = 2;
+                      },
+                      text: 'Result'),
+                  btn(
+                      onTap: () {
+                        idx.value = 3;
+                      },
+                      text: 'Alarm'),
                 ],
               ),
-              SizedBox(
-                height: 400,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 30,
-                  itemBuilder: (context, idx) {
-                    return ListTile(
-                      title: Text('$idx 로그 남기기이이'),
-                    );
-                  },
-                ),
-              ),
+              // Obx(() => selectLog())
+              Obx(() => LogCtrl.to.selectLog(idx.value))
             ],
           ),
         ),

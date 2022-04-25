@@ -8,12 +8,14 @@ class ReusedContainer extends Container {
       this.txtColor = Colors.white,
       this.fontSize = 30,
       this.boxColor = Colors.blue,
+      this.padding,
       this.radius})
       : super(
             key: key,
             height: height,
             width: width,
             alignment: Alignment.center,
+            padding: padding,
             child: Text(
               text,
               style: TextStyle(color: txtColor, fontSize: fontSize),
@@ -30,6 +32,7 @@ class ReusedContainer extends Container {
   final double fontSize;
   final Color boxColor;
   final BorderRadiusGeometry? radius;
+  final EdgeInsetsGeometry? padding;
 }
 
 class RoundBorderBox extends StatelessWidget {
@@ -61,22 +64,24 @@ class RoundBorderBox extends StatelessWidget {
 class BorderBox extends Container {
   BorderBox(
       // this.txt,
-      {
-    Key? key,
-    this.width = 150,
-    this.height = 40,
-    this.child,
-  }) : super(
+      {Key? key,
+      this.width = 150,
+      this.height = 40,
+      this.child,
+      this.padding,
+      this.bgColor = Colors.transparent})
+      : super(
             key: key,
             alignment: Alignment.center,
-            // child: Text(txt),
             child: child,
+            padding: padding,
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-            ),
+                border: Border.all(color: Colors.black), color: bgColor),
             width: width,
             height: height);
   final Widget? child;
   final double? width;
   final double? height;
+  final Color? bgColor;
+  final EdgeInsetsGeometry? padding;
 }

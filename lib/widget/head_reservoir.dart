@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:w_jet/function/alert.dart';
+import 'package:w_jet/widget/radio_box.dart';
 import 'package:w_jet/widget/widget_button.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
@@ -78,15 +79,7 @@ class HeadAndReservoirWidget extends StatelessWidget {
                               child: TextField(
                             controller: TextEditingController(),
                           )),
-                          Row(
-                            children: [
-                              BorderBox(child: const Text('On'), width: 70),
-                              const SizedBox(width: 10),
-                              BorderBox(child: const Text('off'), width: 70),
-                            ],
-                          ),
-                          // container('체크박스')
-                          // BorderBox( child:
+                          OnAndOff(),
                           Checkbox(value: true, onChanged: (v) {})
                           //  )
                         ],

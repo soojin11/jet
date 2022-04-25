@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:w_jet/controller/layout_ctrl.dart';
 import 'package:w_jet/pages/home.dart';
 
-void main() {
+import 'controller/log_ctrl.dart';
+
+void main() async {
+  Get.put(LayoutCtrl());
+  Get.put(LogCtrl());
   runApp(const MyApp());
 }
 

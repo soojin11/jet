@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:w_jet/function/alert.dart';
-import 'package:w_jet/pages/info.dart/log.dart';
 import 'package:w_jet/widget/head_reservoir.dart';
+import 'package:w_jet/widget/radio_box.dart';
 import 'package:w_jet/widget/widget_button.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
+import 'log.dart';
+
 enum HcCommand { execute, restart, shutdown }
 
-class HeadReservoir extends StatelessWidget {
-  HeadReservoir({Key? key}) : super(key: key);
+class MainPage extends StatelessWidget {
+  MainPage({Key? key}) : super(key: key);
   borderBox({required Widget child, required String title, int flex = 1}) {
     return Expanded(
       child: RoundBorderBox(
@@ -67,7 +69,7 @@ class HeadReservoir extends StatelessWidget {
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.blue),
                               borderRadius: BorderRadius.circular(50)),
-                          child: const LogScreen()),
+                          child: LogScreen()),
                       flex: 2,
                     ),
                     //
@@ -123,18 +125,7 @@ class HeadReservoir extends StatelessWidget {
                                               BorderBox(
                                                 child: const Text('255(SV)'),
                                               ),
-                                              Row(
-                                                children: [
-                                                  BorderBox(
-                                                      width: 70,
-                                                      child: const Text('On')),
-                                                  const SizedBox(width: 10),
-                                                  BorderBox(
-                                                    width: 70,
-                                                    child: const Text('Off'),
-                                                  ),
-                                                ],
-                                              )
+                                              OnAndOff(),
                                             ],
                                           )
                                         ],
@@ -187,18 +178,7 @@ class HeadReservoir extends StatelessWidget {
                                               BorderBox(
                                                 child: const Text('255(SV)'),
                                               ),
-                                              Row(
-                                                children: [
-                                                  BorderBox(
-                                                      width: 70,
-                                                      child: const Text('On')),
-                                                  const SizedBox(width: 10),
-                                                  BorderBox(
-                                                    width: 70,
-                                                    child: const Text('Off'),
-                                                  ),
-                                                ],
-                                              )
+                                              OnAndOff(),
                                             ],
                                           )
                                         ],
@@ -239,10 +219,7 @@ class HeadReservoir extends StatelessWidget {
                                           child: const Text('Vacuum'),
                                           width: 180,
                                         ),
-                                        BorderBox(
-                                            child: const Text('On'), width: 70),
-                                        BorderBox(
-                                            child: const Text('Off'), width: 70)
+                                        OnAndOff(),
                                       ],
                                     ),
                                     title: 'Vacuum');
@@ -343,18 +320,7 @@ class HeadReservoir extends StatelessWidget {
                                                 BorderBox(
                                                     child:
                                                         const Text('255(SV)')),
-                                                Row(
-                                                  children: [
-                                                    BorderBox(
-                                                        child: const Text('On'),
-                                                        width: 70),
-                                                    const SizedBox(width: 10),
-                                                    BorderBox(
-                                                        child:
-                                                            const Text('Off'),
-                                                        width: 70)
-                                                  ],
-                                                )
+                                                OnAndOff(),
                                               ],
                                             )
                                           ],
@@ -391,18 +357,7 @@ class HeadReservoir extends StatelessWidget {
                                                 BorderBox(
                                                     child:
                                                         const Text('123(SV)')),
-                                                Row(
-                                                  children: [
-                                                    BorderBox(
-                                                        child: const Text('On'),
-                                                        width: 70),
-                                                    const SizedBox(width: 10),
-                                                    BorderBox(
-                                                        child:
-                                                            const Text('Off'),
-                                                        width: 70)
-                                                  ],
-                                                )
+                                                OnAndOff()
                                               ],
                                             )
                                           ],
@@ -439,18 +394,7 @@ class HeadReservoir extends StatelessWidget {
                                                 BorderBox(
                                                     child:
                                                         const Text('80(SV)')),
-                                                Row(
-                                                  children: [
-                                                    BorderBox(
-                                                        child: const Text('On'),
-                                                        width: 70),
-                                                    const SizedBox(width: 10),
-                                                    BorderBox(
-                                                        child:
-                                                            const Text('Off'),
-                                                        width: 70)
-                                                  ],
-                                                )
+                                                OnAndOff()
                                               ],
                                             )
                                           ],
@@ -484,10 +428,7 @@ class HeadReservoir extends StatelessWidget {
                                           child: const Text('Power'),
                                           width: 180,
                                         ),
-                                        BorderBox(
-                                            child: const Text('On'), width: 70),
-                                        BorderBox(
-                                            child: const Text('Off'), width: 70)
+                                        OnAndOff()
                                       ],
                                     ),
                                     title: 'PC Power');
