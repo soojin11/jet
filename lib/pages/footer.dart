@@ -1,7 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:w_jet/widget/widget_button.dart';
-import 'package:w_jet/widget/widget_container.dart';
-
+import '../config/wjet_color/status_color.dart';
 import '../controller/layout_ctrl.dart';
 
 class Footer extends StatelessWidget {
@@ -71,14 +71,40 @@ class Footer extends StatelessWidget {
             child: OutlineBtn(
           onTap: () {},
           text: 'Stop',
-          bgColor: Colors.red,
+          bgColor: Wjet.error,
           fontSize: 30,
           height: 100,
         )),
         const SizedBox(width: 10),
         Expanded(
           child: OutlineBtn(
-            onTap: () {},
+            onTap: () async {
+              await showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('종료하시겠습니까?'),
+                      actions: [
+                        OutlineBtn(
+                          onTap: () {
+                            exit(0);
+                          },
+                          width: 80,
+                          height: 40,
+                          text: '예',
+                        ),
+                        OutlineBtn(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          width: 80,
+                          height: 40,
+                          text: '취소',
+                        )
+                      ],
+                    );
+                  });
+            },
             text: 'Exit',
             height: 100,
             fontSize: 30,

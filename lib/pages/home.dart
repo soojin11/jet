@@ -8,6 +8,7 @@ import 'package:w_jet/pages/header.dart';
 import 'package:w_jet/pages/manual/main_manual.dart';
 import 'package:w_jet/pages/recipe/recipe_page.dart';
 
+import '../config/wjet_color/status_color.dart';
 import 'main/main_info.dart';
 
 class MainHome extends StatelessWidget {
@@ -38,7 +39,7 @@ class MainHome extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
+          Expanded(
             child: Header(),
             flex: 1,
           ),
@@ -46,7 +47,7 @@ class MainHome extends StatelessWidget {
             child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration:
-                    BoxDecoration(border: Border.all(color: Colors.black)),
+                    BoxDecoration(border: Border.all(color: Wjet.black)),
                 child: Obx(() => selectContents(LayoutCtrl.to.tapIdx.value))),
             flex: 7,
           ),

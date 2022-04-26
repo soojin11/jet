@@ -2,6 +2,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:w_jet/widget/widget_button.dart';
 
+import '../../config/wjet_color/status_color.dart';
 import '../../widget/widget_container.dart';
 
 class DesignPage extends StatelessWidget {
@@ -9,7 +10,7 @@ class DesignPage extends StatelessWidget {
   Widget borderBox(
     final String txt, {
     final double width = 180,
-    final Color boxColor = Colors.blue,
+    final Color boxColor = Wjet.main4,
   }) {
     return ReusedContainer(
       txt,
@@ -71,7 +72,7 @@ class DesignPage extends StatelessWidget {
               Row(
                 children: [
                   borderBox('Cad Path'),
-                  borderBox('', width: 350, boxColor: Colors.transparent),
+                  borderBox('', width: 350, boxColor: Wjet.transparent),
                   OutlineBtn(
                     onTap: () async {
                       await FilePicker.platform.pickFiles(
@@ -86,7 +87,7 @@ class DesignPage extends StatelessWidget {
               Row(
                 children: [
                   borderBox('Output Path'),
-                  borderBox('', width: 350, boxColor: Colors.transparent),
+                  borderBox('', width: 350, boxColor: Wjet.transparent),
                   OutlineBtn(
                     onTap: () async {
                       // await FilePicker.platform.pickFiles(

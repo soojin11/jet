@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../config/wjet_color/status_color.dart';
+
 class Txt extends Text {
   Txt(
     String data, {
-    this.txtColor = Colors.white,
+    this.txtColor = Wjet.white,
     this.fontSize = 15,
   }) : super(
           data,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:w_jet/controller/log_ctrl.dart';
+import '../../config/wjet_color/status_color.dart';
 import '../../widget/widget_button.dart';
 
 class LogScreen extends StatelessWidget {
@@ -25,11 +26,15 @@ class LogScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Log'),
+        const Text(
+          'Log',
+          style: TextStyle(fontSize: 20),
+        ),
+        const SizedBox(height: 10),
         Container(
           width: MediaQuery.of(context).size.width * 0.2,
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.blueGrey),
+              border: Border.all(color: Wjet.main4),
               borderRadius: BorderRadius.circular(10)),
           child: Column(
             children: [
@@ -37,28 +42,27 @@ class LogScreen extends StatelessWidget {
                 children: [
                   btn(
                       onTap: () {
-                        idx.value = 0;
+                        idx(0);
                       },
                       text: 'All'),
                   btn(
                       onTap: () {
-                        idx.value = 1;
+                        idx(1);
                       },
                       text: 'System'),
                   btn(
                       onTap: () {
-                        idx.value = 2;
+                        idx(2);
                       },
                       text: 'Result'),
                   btn(
                       onTap: () {
-                        idx.value = 3;
+                        idx(3);
                       },
                       text: 'Alarm'),
                 ],
               ),
-              // Obx(() => selectLog())
-              Obx(() => LogCtrl.to.selectLog(idx.value))
+              Obx(() => LogCtrl.to.selectLog(idx.value, context: context))
             ],
           ),
         ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:w_jet/config/wjet_color/status_color.dart';
 
 class ReusedContainer extends Container {
   ReusedContainer(String text,
       {Key? key,
       this.height = 100,
       this.width = 150,
-      this.txtColor = Colors.white,
+      this.txtColor = Wjet.white,
       this.fontSize = 30,
-      this.boxColor = Colors.blue,
+      this.boxColor = Wjet.main4,
       this.padding,
       this.radius})
       : super(
@@ -18,12 +19,16 @@ class ReusedContainer extends Container {
             padding: padding,
             child: Text(
               text,
-              style: TextStyle(color: txtColor, fontSize: fontSize),
+              style: TextStyle(
+                color: txtColor,
+                fontSize: fontSize,
+              ),
+              textAlign: TextAlign.center,
             ),
             decoration: BoxDecoration(
               color: boxColor,
               // borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.blueGrey),
+              border: Border.all(color: Wjet.black),
               borderRadius: radius,
             ));
   final double? height;
@@ -49,7 +54,7 @@ class RoundBorderBox extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.blueGrey),
+          border: Border.all(color: Wjet.main4),
           borderRadius: BorderRadius.circular(50)),
       child: Column(
         children: [
@@ -69,14 +74,14 @@ class BorderBox extends Container {
       this.height = 40,
       this.child,
       this.padding,
-      this.bgColor = Colors.transparent})
+      this.bgColor = Wjet.transparent})
       : super(
             key: key,
             alignment: Alignment.center,
             child: child,
             padding: padding,
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black), color: bgColor),
+                border: Border.all(color: Wjet.black), color: bgColor),
             width: width,
             height: height);
   final Widget? child;

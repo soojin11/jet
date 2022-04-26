@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:w_jet/config/wjet_color/status_color.dart';
 import 'package:w_jet/widget/widget_button.dart';
 
 abstract class Alert {
-  static Future show(
-      {required final BuildContext context,
-      required Widget child,
-      required String title}) {
+  static Future show({
+    required final BuildContext context,
+    required Widget child,
+    required String title,
+    Function()? apply,
+  }) {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -22,9 +25,9 @@ abstract class Alert {
                     height: 40,
                     decoration: const BoxDecoration(
                         border: Border(
-                      top: BorderSide(color: Colors.black),
-                      left: BorderSide(color: Colors.black),
-                      right: BorderSide(color: Colors.black),
+                      top: BorderSide(color: Wjet.black),
+                      left: BorderSide(color: Wjet.black),
+                      right: BorderSide(color: Wjet.black),
                     )),
                   ),
                   Container(
@@ -32,8 +35,8 @@ abstract class Alert {
                       height: 350,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black)),
+                      decoration:
+                          BoxDecoration(border: Border.all(color: Wjet.black)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -45,13 +48,13 @@ abstract class Alert {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               OutlineBtn(
-                                  onTap: () {},
+                                  onTap: apply,
                                   text: 'Apply',
-                                  bgColor: Colors.transparent,
-                                  txtColor: Colors.black,
+                                  bgColor: Wjet.transparent,
+                                  txtColor: Wjet.black,
                                   width: 100,
                                   height: 40,
-                                  borderColor: Colors.black,
+                                  borderColor: Wjet.black,
                                   radius: BorderRadius.circular(10)),
                               const SizedBox(width: 35),
                               OutlineBtn(
@@ -59,11 +62,11 @@ abstract class Alert {
                                   Navigator.pop(context);
                                 },
                                 text: 'Cancel',
-                                bgColor: Colors.transparent,
-                                txtColor: Colors.black,
+                                bgColor: Wjet.transparent,
+                                txtColor: Wjet.black,
                                 width: 100,
                                 height: 40,
-                                borderColor: Colors.black,
+                                borderColor: Wjet.black,
                                 radius: BorderRadius.circular(10),
                               ),
                             ],

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:w_jet/widget/widget_button.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
+import '../../config/wjet_color/status_color.dart';
+
 class SequencePage extends StatelessWidget {
   SequencePage({Key? key}) : super(key: key);
 
@@ -59,7 +61,7 @@ class SequencePage extends StatelessWidget {
           OutlineBtn(
             onTap: () {},
             text: 'Stop',
-            bgColor: Colors.red,
+            bgColor: Wjet.error,
             height: 50,
             width: 250,
             fontSize: 20,

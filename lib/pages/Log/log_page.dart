@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:w_jet/controller/log_ctrl.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
+import '../../config/wjet_color/status_color.dart';
 import '../../widget/widget_button.dart';
 
 class LogPage extends StatelessWidget {
@@ -39,31 +40,26 @@ class LogPage extends StatelessWidget {
                                   }),
                             ),
                             actions: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  OutlineBtn(
-                                      width: 80,
-                                      height: 40,
-                                      bgColor: Colors.white,
-                                      txtColor: Colors.black,
-                                      text: 'Ok',
-                                      onTap: () {
-                                        LogCtrl.to.pickDate.value = pickTime;
-                                        Navigator.pop(context);
-                                      }),
-                                  const SizedBox(width: 10),
-                                  OutlineBtn(
-                                      width: 80,
-                                      height: 40,
-                                      bgColor: Colors.white,
-                                      text: 'cancel',
-                                      txtColor: Colors.black,
-                                      onTap: () {
-                                        Navigator.pop(context);
-                                      }),
-                                ],
-                              )
+                              OutlineBtn(
+                                  width: 80,
+                                  height: 40,
+                                  bgColor: Wjet.white,
+                                  txtColor: Wjet.black,
+                                  text: 'Ok',
+                                  onTap: () {
+                                    LogCtrl.to.pickDate.value = pickTime;
+                                    Navigator.pop(context);
+                                  }),
+                              const SizedBox(width: 10),
+                              OutlineBtn(
+                                  width: 80,
+                                  height: 40,
+                                  bgColor: Wjet.white,
+                                  text: 'cancel',
+                                  txtColor: Wjet.black,
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  }),
                             ],
                           );
                         },
@@ -71,14 +67,15 @@ class LogPage extends StatelessWidget {
                     },
                     text: DateFormat('yyyy-MM-dd')
                         .format(LogCtrl.to.pickDate.value),
-                    bgColor: Colors.white,
-                    txtColor: Colors.black,
+                    bgColor: Wjet.white,
+                    txtColor: Wjet.black,
                     fontSize: 20,
-                    borderColor: Colors.transparent,
+                    borderColor: Wjet.transparent,
                   )),
               const SizedBox(width: 20),
-              ReusedContainer(
-                '조회',
+              OutlineBtn(
+                onTap: () {},
+                text: '조회',
                 height: 40,
                 width: 100,
                 fontSize: 20,
@@ -88,7 +85,7 @@ class LogPage extends StatelessWidget {
           BorderBox(
             width: double.infinity,
             height: 500,
-            child: Obx(() => LogCtrl.to.selectLog(idx.value)),
+            child: Obx(() => LogCtrl.to.selectLog(idx.value, context: context)),
           ),
           Row(
             children: [

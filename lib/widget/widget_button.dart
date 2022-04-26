@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:w_jet/config/wjet_color/status_color.dart';
 
 class OutlineBtn extends Material {
   OutlineBtn(
@@ -8,9 +9,9 @@ class OutlineBtn extends Material {
       this.height,
       this.width,
       this.fontSize,
-      this.bgColor = Colors.blue,
-      this.txtColor = Colors.white,
-      this.borderColor = Colors.blueGrey,
+      this.bgColor = Wjet.main4,
+      this.txtColor = Wjet.white,
+      this.borderColor = Wjet.black,
       this.radius})
       : super(
           key: key,

@@ -4,10 +4,12 @@ import 'package:w_jet/controller/layout_ctrl.dart';
 import 'package:w_jet/pages/home.dart';
 
 import 'controller/log_ctrl.dart';
+import 'controller/recipe_ctrl.dart';
 
 void main() async {
   Get.put(LayoutCtrl());
   Get.put(LogCtrl());
+  Get.put(RecipeCtrl());
   runApp(const MyApp());
 }
 

@@ -9,18 +9,22 @@ class ManualHRpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            Expanded(child: HeadAndReservoirWidget()),
-            Expanded(child: HeadAndReservoirWidget()),
-            Expanded(child: HeadAndReservoirWidget()),
-          ],
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(child: HRWidget()),
+              Expanded(child: HRWidget()),
+              Expanded(child: HRWidget()),
+            ],
+          ),
         ),
-        Row(
-          children: [
-            Expanded(child: BorderBox()),
-            Expanded(child: BorderBox()),
-          ],
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(child: BorderBox()),
+              Expanded(child: BorderBox()),
+            ],
+          ),
         )
       ],
     );

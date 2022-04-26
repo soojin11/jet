@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:w_jet/widget/widget_button.dart';
 import 'package:w_jet/widget/widget_container.dart';
 
-import '../../widget/radio_box.dart';
+import '../../widget/on_off.dart';
 
 class HardWarePage extends StatelessWidget {
   const HardWarePage({Key? key}) : super(key: key);

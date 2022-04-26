@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:w_jet/config/wjet_color/status_color.dart';
 import 'package:w_jet/controller/layout_ctrl.dart';
 import 'package:w_jet/pages/manual/hardware_page.dart';
 import 'package:w_jet/pages/manual/motion_page.dart';
@@ -50,7 +51,7 @@ class ManualPage extends StatelessWidget {
             flex: 4,
             child: Obx(() => selectedWidget(LayoutCtrl.to.manualIdx.value))),
         const VerticalDivider(
-          color: Colors.black,
+          color: Wjet.black,
         ),
         Expanded(
           flex: 1,
@@ -72,8 +73,8 @@ class ManualPage extends StatelessWidget {
                           height: 50,
                           fontSize: 20,
                           bgColor: LayoutCtrl.to.manualIdx.value == idx
-                              ? Colors.green
-                              : Colors.blue,
+                              ? Wjet.main
+                              : Wjet.main4,
                         ),
                       )))),
         ),
