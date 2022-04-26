@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 class LogCtrl extends GetxController {
   static LogCtrl get to => Get.find();
 
+  final Rx<DateTime> pickDate = Rx(DateTime.now());
+
   Widget listView({required final int count, required final String txt}) {
     return SizedBox(
       height: 400,

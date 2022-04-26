@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:w_jet/function/alert.dart';
+import 'package:w_jet/pages/main/right_side.dart';
 import 'package:w_jet/widget/head_reservoir.dart';
 import 'package:w_jet/widget/radio_box.dart';
 import 'package:w_jet/widget/widget_button.dart';
@@ -11,6 +12,7 @@ enum HcCommand { execute, restart, shutdown }
 
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
+
   borderBox({required Widget child, required String title, int flex = 1}) {
     return Expanded(
       child: RoundBorderBox(
@@ -49,8 +51,6 @@ class MainPage extends StatelessWidget {
                                       HeadAndReservoirWidget(showText: true)),
                               Expanded(child: HeadAndReservoirWidget()),
                               Expanded(child: HeadAndReservoirWidget()),
-                              // HeadAndReservoirWidget(),
-                              // HeadAndReservoirWidget(),
                             ],
                           ),
                           decoration: BoxDecoration(
@@ -62,8 +62,6 @@ class MainPage extends StatelessWidget {
                     Expanded(
                       child: Container(
                           alignment: Alignment.center,
-                          // padding: const EdgeInsets.symmetric(
-                          //     horizontal: 20, vertical: 10),
                           width: 100,
                           height: 600,
                           decoration: BoxDecoration(
@@ -542,55 +540,7 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ReusedContainer(
-                'Initail',
-                height: 50,
-                fontSize: 20,
-              ),
-              ReusedContainer(
-                'Panel Align',
-                height: 50,
-                fontSize: 20,
-              ),
-              ReusedContainer(
-                'Print',
-                height: 50,
-                fontSize: 20,
-              ),
-              ReusedContainer(
-                'DPC',
-                height: 50,
-                fontSize: 20,
-              ),
-              ReusedContainer(
-                'Periodic Jetting',
-                height: 50,
-                fontSize: 20,
-              ),
-              ReusedContainer(
-                'Short Purge',
-                height: 50,
-                fontSize: 20,
-              ),
-              const SizedBox(height: 70),
-              ReusedContainer(
-                '드롭박스 넣기',
-                height: 50,
-                fontSize: 20,
-              ),
-              ReusedContainer(
-                'Short Purge',
-                height: 50,
-                fontSize: 20,
-              ),
-            ],
-          ),
-        )
+        const Expanded(flex: 1, child: RightSide())
       ],
     );
   }

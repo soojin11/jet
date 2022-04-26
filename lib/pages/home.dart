@@ -8,7 +8,7 @@ import 'package:w_jet/pages/header.dart';
 import 'package:w_jet/pages/manual/main_manual.dart';
 import 'package:w_jet/pages/recipe/recipe_page.dart';
 
-import 'info/main_info.dart';
+import 'main/main_info.dart';
 
 class MainHome extends StatelessWidget {
   const MainHome({Key? key}) : super(key: key);
