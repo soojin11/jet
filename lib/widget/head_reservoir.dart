@@ -33,7 +33,6 @@ class HRWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double long = 80;
-    const double short = 50;
     return IntrinsicWidth(
       child: Column(
         children: [
@@ -45,6 +44,7 @@ class HRWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      const SizedBox(width: 80),
                       container('p', height: 35),
                       const SizedBox(width: 20),
                       btn('111', () {
@@ -78,6 +78,7 @@ class HRWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      const SizedBox(width: 80),
                       container('M', height: 35),
                       const SizedBox(width: 20),
                       btn('11', () {

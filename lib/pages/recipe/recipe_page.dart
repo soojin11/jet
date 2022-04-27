@@ -42,7 +42,7 @@ class RecipePage extends StatelessWidget {
                                     text: RecipeCtrl.to.recipes[index],
                                     height: 40,
                                     bgColor: selectedIdx.value == index
-                                        ? Colors.amber
+                                        ? Wjet.main
                                         : Wjet.white,
                                     txtColor: Wjet.black,
                                   ));

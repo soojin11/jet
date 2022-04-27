@@ -21,6 +21,9 @@ class Header extends StatelessWidget {
           DateFormat('yyyy/MM/dd \n HH:mm:ss').format(
             DateTime.now(),
           ),
+          height: 100,
+          width: 150,
+          fontSize: 30,
         );
       },
     );
@@ -34,6 +37,9 @@ class Header extends StatelessWidget {
         Expanded(
           child: ReusedContainer(
             'WGS',
+            height: 100,
+            width: 150,
+            fontSize: 30,
           ),
           flex: 1,
         ),
@@ -62,8 +68,8 @@ class Header extends StatelessWidget {
                                 text: RecipeCtrl.to.recipes[index],
                                 height: 40,
                                 bgColor: selectedIdx.value == index
-                                    ? Wjet.main
-                                    : Wjet.white,
+                                    ? Wjet.selected
+                                    : Wjet.main,
                                 txtColor: Wjet.black,
                               ));
                         },
@@ -84,14 +90,20 @@ class Header extends StatelessWidget {
         const SizedBox(width: 10),
         Expanded(
           child: ReusedContainer(
-            'PLC Interface Status',
+            'PLC Interface Status', height: 100,
+            width: 150, fontSize: 30,
             // width: 300,
           ),
           flex: 2,
         ),
         const SizedBox(width: 10),
         Expanded(
-          child: ReusedContainer('EQ Status'),
+          child: ReusedContainer(
+            'EQ Status',
+            height: 100,
+            width: 150,
+            fontSize: 30,
+          ),
           flex: 1,
         ),
       ],

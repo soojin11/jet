@@ -73,8 +73,8 @@ class ManualPage extends StatelessWidget {
                           height: 50,
                           fontSize: 20,
                           bgColor: LayoutCtrl.to.manualIdx.value == idx
-                              ? Wjet.main
-                              : Wjet.main4,
+                              ? Wjet.selected
+                              : Wjet.main,
                         ),
                       )))),
         ),

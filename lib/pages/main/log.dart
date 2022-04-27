@@ -34,7 +34,7 @@ class LogScreen extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.width * 0.2,
           decoration: BoxDecoration(
-              border: Border.all(color: Wjet.main4),
+              border: Border.all(color: Wjet.main),
               borderRadius: BorderRadius.circular(10)),
           child: Column(
             children: [

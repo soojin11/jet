@@ -4,11 +4,11 @@ import 'package:w_jet/config/wjet_color/status_color.dart';
 class ReusedContainer extends Container {
   ReusedContainer(String text,
       {Key? key,
-      this.height = 100,
-      this.width = 150,
+      this.height = 40,
+      this.width = 80,
       this.txtColor = Wjet.white,
-      this.fontSize = 30,
-      this.boxColor = Wjet.main4,
+      this.fontSize = 15,
+      this.boxColor = Wjet.main,
       this.padding,
       this.radius})
       : super(
@@ -54,7 +54,7 @@ class RoundBorderBox extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
-          border: Border.all(color: Wjet.main4),
+          border: Border.all(color: Wjet.main),
           borderRadius: BorderRadius.circular(50)),
       child: Column(
         children: [

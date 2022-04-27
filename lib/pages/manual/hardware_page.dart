@@ -18,10 +18,10 @@ class HardWarePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
         Expanded(
-            child: Column(
+            child: Row(
           children: [
             Expanded(
                 child: Column(
@@ -29,7 +29,6 @@ class HardWarePage extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    // const SizedBox(width: 120),
                     borderBox('Light'),
                     borderBox('Current'),
                     borderBox('Set Value'),
@@ -38,7 +37,6 @@ class HardWarePage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    // const SizedBox(width: 50),
                     borderBox('View'),
                     BorderBox(
                       child: TextField(
@@ -61,13 +59,13 @@ class HardWarePage extends StatelessWidget {
                       height: 40,
                       width: 120,
                     ),
-                    OnAndOff(), const SizedBox(width: 10),
+                    OnAndOff(),
+                    const SizedBox(width: 10),
                     borderBox('Set', width: 50),
                   ],
                 ),
                 Row(
                   children: [
-                    // const SizedBox(width: 50),
                     borderBox('Nozzle'),
                     BorderBox(
                       child: TextField(
@@ -90,13 +88,13 @@ class HardWarePage extends StatelessWidget {
                       height: 40,
                       width: 120,
                     ),
-                    OnAndOff(), const SizedBox(width: 10),
+                    OnAndOff(),
+                    const SizedBox(width: 10),
                     borderBox('Set', width: 50),
                   ],
                 ),
                 Row(
                   children: [
-                    // const SizedBox(width: 50),
                     borderBox('Align'),
                     BorderBox(
                       child: TextField(
@@ -119,7 +117,8 @@ class HardWarePage extends StatelessWidget {
                       height: 40,
                       width: 120,
                     ),
-                    OnAndOff(), const SizedBox(width: 10),
+                    OnAndOff(),
+                    const SizedBox(width: 10),
                     borderBox('Set', width: 50),
                   ],
                 ),
@@ -131,7 +130,6 @@ class HardWarePage extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    // const SizedBox(width: 120),
                     borderBox('UV'),
                     borderBox('Current'),
                     borderBox('Set Value'),
@@ -140,7 +138,6 @@ class HardWarePage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    // const SizedBox(width: 50),
                     borderBox('365'),
                     BorderBox(
                       child: TextField(
@@ -163,7 +160,8 @@ class HardWarePage extends StatelessWidget {
                       height: 40,
                       width: 120,
                     ),
-                    OnAndOff(), const SizedBox(width: 10),
+                    OnAndOff(),
+                    const SizedBox(width: 10),
                     borderBox('Set', width: 50),
                   ],
                 ),
@@ -201,88 +199,95 @@ class HardWarePage extends StatelessWidget {
           ],
         )),
         Expanded(
-            child: Column(
+            child: Row(
           children: [
             Expanded(
-                flex: 2,
-                child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const Text('Head Controller'),
-                    Row(
-                      children: [
-                        borderBox('PC Power'),
-                        const SizedBox(width: 10),
-                        OnAndOff(
-                          width: 120,
-                        ),
-                        const SizedBox(width: 10),
-                        OutlineBtn(
-                          onTap: () {},
-                          text: 'Set',
-                          width: 120,
-                          height: 40,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        borderBox('Common'),
-                        const SizedBox(width: 10),
-                        OnAndOff(
-                          width: 120,
-                          isConnect: true,
-                        ),
-                        const SizedBox(width: 10),
-                        OutlineBtn(
-                          onTap: () {},
-                          text: 'Set',
-                          width: 120,
-                          height: 40,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        borderBox('Execute Server', width: 380),
-                        const SizedBox(width: 10),
-                        OutlineBtn(
-                          onTap: () {},
-                          text: 'Set',
-                          width: 120,
-                          height: 40,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        borderBox('Restart Server', width: 380),
-                        const SizedBox(width: 10),
-                        OutlineBtn(
-                          onTap: () {},
-                          text: 'Set',
-                          width: 120,
-                          height: 40,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        borderBox('Shutdown Server', width: 380),
-                        const SizedBox(width: 10),
-                        OutlineBtn(
-                          onTap: () {},
-                          text: 'Set',
-                          width: 120,
-                          height: 40,
-                        ),
-                      ],
-                    )
-                  ],
+                flex: 1,
+                child: Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text('Head Controller'),
+                      Row(
+                        children: [
+                          borderBox('PC Power'),
+                          const SizedBox(width: 10),
+                          OnAndOff(
+                            width: 120,
+                          ),
+                          const SizedBox(width: 10),
+                          OutlineBtn(
+                            onTap: () {},
+                            text: 'Set',
+                            width: 120,
+                            height: 40,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          borderBox('Common'),
+                          const SizedBox(width: 10),
+                          OnAndOff(
+                            width: 120,
+                            isConnect: true,
+                          ),
+                          const SizedBox(width: 10),
+                          OutlineBtn(
+                            onTap: () {},
+                            text: 'Set',
+                            width: 120,
+                            height: 40,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          borderBox('Execute Server', width: 380),
+                          const SizedBox(width: 10),
+                          OutlineBtn(
+                            onTap: () {},
+                            text: 'Set',
+                            width: 120,
+                            height: 40,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          borderBox('Restart Server', width: 380),
+                          const SizedBox(width: 10),
+                          OutlineBtn(
+                            onTap: () {},
+                            text: 'Set',
+                            width: 120,
+                            height: 40,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          borderBox('Shutdown Server', width: 380),
+                          const SizedBox(width: 10),
+                          OutlineBtn(
+                            onTap: () {},
+                            text: 'Set',
+                            width: 120,
+                            height: 40,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 )),
             Expanded(
                 flex: 1,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text('Chuck'),
                     Row(
@@ -302,7 +307,7 @@ class HardWarePage extends StatelessWidget {
                   ],
                 )),
           ],
-        ))
+        )),
       ],
     );
   }

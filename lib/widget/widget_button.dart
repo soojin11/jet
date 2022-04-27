@@ -9,7 +9,7 @@ class OutlineBtn extends Material {
       this.height,
       this.width,
       this.fontSize,
-      this.bgColor = Wjet.main4,
+      this.bgColor = Wjet.main,
       this.txtColor = Wjet.white,
       this.borderColor = Wjet.black,
       this.radius})

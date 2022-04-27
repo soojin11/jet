@@ -25,7 +25,7 @@ class OnAndOff extends StatelessWidget {
               },
               width: width,
               height: height,
-              bgColor: isOn.value ? Wjet.main : Wjet.white,
+              bgColor: isOn.value ? Wjet.error : Wjet.white,
               txtColor: isOn.value ? Wjet.white : Wjet.black,
               text: isConnect ? 'Connection' : 'On',
             )),

@@ -16,7 +16,7 @@ class MainPage extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          flex: 7,
+          flex: 9,
           child: Column(
             children: [
               Expanded(
@@ -38,7 +38,7 @@ class MainPage extends StatelessWidget {
                             ],
                           ),
                           decoration: BoxDecoration(
-                              border: Border.all(color: Wjet.main4),
+                              border: Border.all(color: Wjet.main),
                               borderRadius: BorderRadius.circular(50))),
                       flex: 6,
                     ),
@@ -48,7 +48,7 @@ class MainPage extends StatelessWidget {
                           alignment: Alignment.center,
                           width: 100,
                           decoration: BoxDecoration(
-                              border: Border.all(color: Wjet.main4),
+                              border: Border.all(color: Wjet.main),
                               borderRadius: BorderRadius.circular(50)),
                           child: LogScreen()),
                       flex: 2,
@@ -62,7 +62,9 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(flex: 1, child: RightSide())
+        Expanded(
+            flex: 1,
+            child: Align(alignment: Alignment.centerRight, child: RightSide()))
       ],
     );
   }

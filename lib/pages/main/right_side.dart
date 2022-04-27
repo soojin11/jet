@@ -20,31 +20,37 @@ class RightSide extends StatelessWidget {
           'Initail',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
         ReusedContainer(
           'Panel Align',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
         ReusedContainer(
           'Print',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
         ReusedContainer(
           'DPC',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
         ReusedContainer(
           'Periodic Jetting',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
         ReusedContainer(
           'Short Purge',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
         const SizedBox(height: 70),
         DropdownButton(
@@ -63,6 +69,7 @@ class RightSide extends StatelessWidget {
           'Short Purge',
           height: 50,
           fontSize: 20,
+          width: 150,
         ),
       ],
     );

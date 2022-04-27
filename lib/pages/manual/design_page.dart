@@ -10,7 +10,7 @@ class DesignPage extends StatelessWidget {
   Widget borderBox(
     final String txt, {
     final double width = 180,
-    final Color boxColor = Wjet.main4,
+    final Color boxColor = Wjet.main,
   }) {
     return ReusedContainer(
       txt,
@@ -25,6 +25,7 @@ class DesignPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
