@@ -5,11 +5,8 @@ class RecipeCtrl extends GetxController {
   final RxList<String> recipes = RxList.empty(growable: true);
   final RxList<String> dbRecipes = RxList.empty(growable: true);
 
-  // List recipes = ['Recipe 1', 'Recipe 2', 'Recipe 3', 'Recipe 4', 'Recipe 5'];
-
   Future<bool> getRecipes() async {
     try {
-      recipes.clear();
       recipes
           .addAll(['Recipe 1', 'Recipe 2', 'Recipe 3', 'Recipe 4', 'Recipe 5']);
       dbRecipes.value = recipes;
